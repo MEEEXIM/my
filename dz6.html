@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+
+    .box {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      perspective: 800px;
+      cursor: pointer;
+    }
+
+    .left, .right {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: #7d2b5a;
+    }
+
+    .left {
+      left: 0;
+      transform-origin: right center;
+    }
+
+    .right {
+      right: 0;
+      transform-origin: left center;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #000000;
+      font-size: 25px;
+      font-weight: bold;
+      opacity: 0;
+    }
+
+    .box:hover .left {
+      transform: rotateY(30deg) translateX(-30px);
+    }
+
+    .box:hover .right {
+      transform: rotateY(-30deg) translateX(30px);
+    }
+
+    .box:hover .text {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="text">HELLO</div>
+  </div>
+</body>
+</html>
